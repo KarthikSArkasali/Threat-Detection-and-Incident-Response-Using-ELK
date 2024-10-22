@@ -1,6 +1,127 @@
-# Threat-Detection-Incident-Response-Using-ELK-
+# ~ Threat-Detection-Incident-Response-Using-ELK
+
 This project involves automating key SOC components, including ELK stack setup for log monitoring, detecting brute force attacks on SSH and RDP servers, simulating attacks with a Mythic C2 server, and integrating a ticketing system for alert investigation and response.
 
-# Step-1: Created Logical Block Diagram Using draw.io https://www.drawio.com/
+# Step-1: Building a Centralized Logging System: ELK Stack Setup and Sysmon Log Ingestion
 
-![Block Diagram](https://github.com/user-attachments/assets/d0e18e13-89c6-4abb-ba0d-922798136187)
+# Created Logical Diagram using draw.io ![1  Block Diagram](https://github.com/user-attachments/assets/c234a80b-6c80-4301-91ab-d6bb0d9d488e)
+
+# Installed Virtual Machines (4 Ubuntu ,
+
+![2  Virtual Machines](https://github.com/user-attachments/assets/8c090246-0600-473a-8efb-009273510a01)
+
+# Installed Elastic & Kibana in Ubuntu 24.04 (Ubuntu ELK)
+
+# Elastic ![Download Elastic ](https://github.com/user-attachments/assets/1d3c5456-fa88-4ff2-ab64-a8628aa0809e)
+
+# Kibana ![Download Kibana](https://github.com/user-attachments/assets/dc61626a-b9fa-4fc8-b51f-6a328c035aaf)
+
+# Opened IP-Address:5601 (Port) in Web Browser
+
+![Elastic Web GUI](https://github.com/user-attachments/assets/28592ee4-8be5-495d-84cf-ffb524db6a01)
+
+# Installed & Configured Sysmon & Elastic Agent on Windows 10 Host
+
+# Sysmon ![6  Sysmon](https://github.com/user-attachments/assets/faee5fb7-7447-4ef4-99ec-dbfa628746d4)
+
+# Elastic Agent ![7  Elastic Agent](https://github.com/user-attachments/assets/53fd1e39-5bae-4e43-aa09-1e95429eb85f)
+
+# Installed & Configured Fleet Server in Host (Ubuntu Fleet)
+
+![8  Fleet Server](https://github.com/user-attachments/assets/bd45eb7f-cff0-44af-8dda-3801afe2d76e)
+
+# Configured Windows Sysmon & Windows Defender 
+
+![9  Sysmon   Defender](https://github.com/user-attachments/assets/991ce68b-d35c-4885-8191-3c6f7b5df1e4)
+
+# Ingested Logs such as Sysmon & Windows Defender
+
+![10  Ingested Logs](https://github.com/user-attachments/assets/a563eb8f-0c7c-43c8-b8b3-9781d982a299)
+
+# ~ Step-2: Implementing Secure Access: Setting Up SSH/RDP Servers, Detecting Brute Force Attacks, and Monitoring with Dashboards
+
+# Enabled RDP in Win 22 (Karthik-Agent) & SSH in Ubuntu (Karthik-Agent)
+
+![11  RDP Enabled](https://github.com/user-attachments/assets/822d81dd-4d82-4b5c-a5eb-63fa2c8a23d5)
+
+# Attacking Brute Force to Win 22 (Karthik-Agent) using Crowbar Tool in kali 
+
+![12  RDP Brute Force](https://github.com/user-attachments/assets/a8fef5f3-e888-4b00-a753-41f4c546c24d)
+
+# Created Brute Force Alerts for both RDP in Win 22 (Karthik-Agent) & SSH in Ubuntu (Karthik-Agent) in Elastic GUI 
+
+# RDP Brute Force Alerts ![13  RDP](https://github.com/user-attachments/assets/f8584033-f9be-4f3b-b0fe-eaacd0b1ad64)
+
+# SSH  Brute Force Alerts ![14  SSH](https://github.com/user-attachments/assets/4fc92f8c-096d-46e7-bb0a-bf0eb5a51874)
+
+# Created Dashboard in Elastic GUI for SSH & RDP Successful,Failed Authentications
+
+# SSH Successful & Failed Authentications ![15  SSH Dashboard](https://github.com/user-attachments/assets/1d0a0577-10eb-4d41-baee-6df682a75072)
+
+# RDP Successful & Failed Authentications ![16  RDP Dashboard](https://github.com/user-attachments/assets/2bbc7dc3-f8da-4cf0-bab8-7d0bf5aff69d)
+
+# ~ Step-3: Building and Testing Command & Control (C2) Infrastructure: Setting Up Mythic C2 Server and Simulating Attacks on Public Servers
+
+# Installed & Configured Mythic Command and Control (C2) server in Ubuntu (Mythic) host
+
+ ![17  Mythic](https://github.com/user-attachments/assets/1b0d57a5-e0fd-4860-99bb-167cab16352e)
+
+# Created Logical Diagram for Mythic C2 attack Phase-Wise
+
+# Phase-1 Initial Access ![18  Phase-1](https://github.com/user-attachments/assets/a790166e-d896-463b-ada3-4a3c143fa602)
+
+# RDP Brute Force ![12  RDP Brute Force](https://github.com/user-attachments/assets/d9eea15f-f7d9-4948-8c90-82f6360adfa0)
+
+# RDP Authentication Successful from Attacker machine kali ![18 1 Authentication Success](https://github.com/user-attachments/assets/fcb05111-6c51-4366-adb4-c3ea74cab4de)
+
+# Phase-2 Discovery ![19  Phase-2](https://github.com/user-attachments/assets/ad96189d-4d33-41be-bb35-35f15ca1e1b5)
+
+# Discovered via RDP ![19 2 Discovery Via RDP](https://github.com/user-attachments/assets/314a5e08-4595-4d21-a223-4f95db4aa1f1)
+
+# Phase-3 Defender Evasion ![20  Phase-3](https://github.com/user-attachments/assets/6c5918e8-c2f2-438d-b82a-3ed852bdd180)
+
+# Defender Evasion Done ![20 1 Defender Evasion](https://github.com/user-attachments/assets/0e7c069f-b96c-4c02-9cd8-114994580933)
+
+# Phase-4 Execution ![21  Phase-4](https://github.com/user-attachments/assets/f515c3dc-e571-4360-9988-7c575b6d576f)
+
+# Payload Execution Done ![21 1 Execution ](https://github.com/user-attachments/assets/3d6c387b-03fc-45d5-bc0c-9cbe48cce221)
+
+# Phase-5 Command & Control ![22  Phase-5](https://github.com/user-attachments/assets/9cfca8fb-5b76-47ec-b98c-a35a647675d4)
+
+# Command & Control Done ![22 1 C2](https://github.com/user-attachments/assets/a36356e0-3e46-40ab-983b-121fe626fb5f)
+
+# Phase-6 Exfiltration ![23  Phase-6](https://github.com/user-attachments/assets/40bcece7-eeae-4a33-bac1-645696b86470)
+
+# Exfiltration Done ![23 1 Exfiltration](https://github.com/user-attachments/assets/6de2e31b-70d3-4adc-8a07-75b3c4a1580f)
+
+# Created Alerts for Mythic C2 Server ![24  Mythic Alerts](https://github.com/user-attachments/assets/f6fac524-2fbb-4d09-9e7d-47069b5ee92e)
+
+# Created Dashboard for Mythic C2 Server ![25  Dashboard Attack](https://github.com/user-attachments/assets/40b5295d-56b5-470a-bf26-db0e08ff5799)
+
+# Created Rules for Both RDP,SSH & Mythic C2 Attack ![26  Rules](https://github.com/user-attachments/assets/b04c8f11-455d-4c46-b0ce-19ca5458ba18)
+
+# Generated Alerts for Both RDP,SSH & Mythic C2 Attack ![27  Alerts](https://github.com/user-attachments/assets/021084cc-0dd3-4b94-baa0-59bcedc82fc5)
+
+![27 1 Alerts](https://github.com/user-attachments/assets/4a271cc6-8983-4024-b81b-5d243e2156ae)
+
+# Step-4: Implementing and Integrating Ticketing Systems for Efficient Alert Management and Investigation ![28  OSTICKET](https://github.com/user-attachments/assets/8b648536-eb90-453b-8980-c3c2199f267d)
+
+# osTicket Admin Panel ![OSticket](https://github.com/user-attachments/assets/1a8ad9e0-2fef-4c12-bd95-f26921a3f3aa)
+
+# Created osTicket Webhook under Rule Setting in Elastic GUI ![29  Webhook](https://github.com/user-attachments/assets/2b5a0d55-956f-4a66-bd6e-71d270c0aefa)
+
+# Automatically sends the triggered Alerts to osTicket ![OsTicket alert](https://github.com/user-attachments/assets/6eadb12f-6c2b-4cc0-8de1-3353048a36db)
+
+# Integrated Elastic Defender in Elastic GUI ![30  Integrated Elastic Defender](https://github.com/user-attachments/assets/02359325-f245-4812-ad44-adbca23fcf79)
+
+![32  Elastic Endpoint ](https://github.com/user-attachments/assets/5cc3cf37-df3b-421b-8ae6-e45b747ff249)
+
+# If we try to run SVCHOST.karthikrocks.exe Elastic Defender blocks ![31  Malware alert](https://github.com/user-attachments/assets/ce0c9f6f-390b-4458-b825-801c373e0128)
+
+# Elastic Defender Isolate Endpoint with Malware Detected ![Screenshot 2024-10-21 105017](https://github.com/user-attachments/assets/47b2119f-88ff-4e96-b846-8d74b2855e88)
+
+![34  Isolated](https://github.com/user-attachments/assets/4d658dcd-25fa-4124-a439-df745fc94ab5)
+
+# Soc Analyst Investigate malware and Release host
+
+# ~ This is the End of project ~
