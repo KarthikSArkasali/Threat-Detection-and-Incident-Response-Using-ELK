@@ -1,6 +1,6 @@
 # ~ Threat-Detection-Incident-Response-Using-ELK
 
-This project focuses on automating critical SOC components, which include setting up the ELK stack for log monitoring, detecting brute-force attacks on SSH and RDP servers, simulating attacks with a Mythic C2 server, and integrating a ticketing system for alert investigation and response.
+* This project focuses on automating critical SOC components, which include setting up the ELK stack for log monitoring, detecting brute-force attacks on SSH and RDP servers, simulating attacks with a Mythic C2 server, and integrating a ticketing system for alert investigation and response.
 
 # ~ Step 1: Building a Centralized Logging System
 # Set up the ELK stack and configured Sysmon for log ingestion.
