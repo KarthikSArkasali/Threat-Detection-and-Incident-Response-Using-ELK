@@ -129,5 +129,34 @@ This project focuses on automating critical SOC components, which include settin
 
 # ![34  Isolated](https://github.com/user-attachments/assets/4d658dcd-25fa-4124-a439-df745fc94ab5)
 
-# The SOC analyst investigates the malware and releases the host from isolation.
+# When an endpoint is isolated, analysts typically follow these steps:
 
+# Assessment of Isolation:
+* Confirm that the endpoint has been successfully isolated to prevent further threats or unauthorized access.
+
+# Investigation:
+* Examine logs and alerts related to the isolated endpoint to determine the nature and extent of the compromise.
+* analyze the malware or suspicious activity to understand its impact and identify the attack vector.
+
+# Containment:
+* Ensure that any affected systems are contained and that there is no further spread of the threat within the network.
+
+# Remediation:
+* Remove the malware or any malicious files from the endpoint.
+* Apply patches or updates to address any vulnerabilities exploited during the attack.
+
+# Recovery:
+* Restore the endpoint to normal operation, ensuring it is clean and secure.
+* Reconnect the endpoint to the network after confirming it is safe.
+
+# Documentation:
+* Document all findings, actions taken, and the timeline of the incident for future reference and compliance.
+
+# Post-Incident Analysis:
+* Conduct a review of the incident to identify lessons learned and improve security measures.
+* Update incident response plans and security protocols based on insights gained from the investigation.
+
+# Communication:
+* Inform relevant stakeholders, including management and possibly affected users, about the incident and any necessary actions they need to take.
+
+# This process ensures a thorough and systematic response to isolated endpoints, mitigating risks and enhancing overall security posture.
