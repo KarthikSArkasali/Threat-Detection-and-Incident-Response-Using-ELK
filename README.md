@@ -1,4 +1,4 @@
-# ~ Threat-Detection-Incident-Response-Using-ELK
+# ~ Advanced Threat Detection and Incident Response Automation with ELK Stack
 
 * This project focuses on automating critical SOC components, which include setting up the ELK stack for log monitoring, detecting brute-force attacks on SSH and RDP servers, simulating attacks with a Mythic C2 server, and integrating a ticketing system for alert investigation and response.
 
